@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './App.css';
 import Form from './Form';
-
+import Members from './Members';
 
 const initialFormValues = {
   name: "",
@@ -10,6 +10,7 @@ const initialFormValues = {
 }
 
 function App() {
+  const [members, setMembers] = useState([]);
   const [formValues, setFormValues] = useState(initialFormValues);
   const [errorText, setErrorText] = useState("");
   const updateForm = (inputName, inputValue) => {
@@ -30,7 +31,17 @@ function App() {
   return (
     <div className="App">
       <h2>Hello World</h2>
-      <Form/>
+      <Form
+      values={formValues}
+      update={updateForm}
+      submit={submitForm}
+      errorText={errorText}
+      />
+      {members.map(member => {
+        return (
+          <Members key={member.id} details={member}/>
+        )
+      })}
     </div>
   );
 }
