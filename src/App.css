@@ -50,6 +50,7 @@ h1, h2, h3, h4 {
   label {
     display: flex;
     justify-content: space-between;
+    font-weight: bold;
   }
   input, select, button {
     height: 1.5rem;

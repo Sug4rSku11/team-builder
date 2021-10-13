@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+// import axios from './index'
 import './App.css';
 import Form from './Form';
 import Members from './Members';
@@ -27,6 +28,18 @@ function App() {
       setErrorText("You must complete all fields!");
       return;
     }
+    // axios.post('fakeapi.com', newInput)
+    // .then(res => {
+    //   console.log(res);
+    //   setMembers([res.data, ...members]);
+    //   setFormValues(initialFormValues);
+    //   setErrorText("");
+    // }).catch(err => {
+    //   console.error(err);
+    // })
+    // useEffect(() => {
+    //   axios.get('fakeapi.com').then(res => setMembers(res.data))
+    // }, [])
   }
   return (
     <div className="app-container">
