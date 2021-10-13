@@ -24,13 +24,13 @@ function App() {
       role: formValues.role
     }
     if (!newInput.name || !newInput.email || !newInput.role) {
-      setErrorText("You must complete all fields.");
+      setErrorText("You must complete all fields!");
       return;
     }
   }
   return (
-    <div className="App">
-      <h2>Hello World</h2>
+    <div className="app-container">
+      {/* <h2>Team Form</h2> */}
       <Form
       values={formValues}
       update={updateForm}

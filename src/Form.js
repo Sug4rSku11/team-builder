@@ -16,6 +16,7 @@ const onSubmit = evt => {
 
     return (
         <form className="form-container" onSubmit={onSubmit}>
+            <h2>Team Form</h2>
             <div className="form-inputs">
             <label>Name
                 <input
@@ -36,16 +37,18 @@ const onSubmit = evt => {
                 />    
             </label>
             <label>Role
-                <input value name="role" placeholder="Name" onChange={onChange}/>   
+                <select value={values.role} name="role" onChange={onChange}>   
                 <option value="">Role</option>
                 <option value="frontend engineer">Frontend Engineer</option> 
                 <option value="backend engineer">Backend Engineer</option>
                 <option value="fullstack developer">Fullstack Developer</option>
                 <option value="designer">Designer</option>
+                </select>
             </label>
             <div className="submit">
                 <button>Submit</button>
-            </div>    
+            </div> 
+            <p className="error">{errorText}</p>   
             </div>
         </form>
     )
